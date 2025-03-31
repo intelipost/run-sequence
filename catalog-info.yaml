@@ -1,16 +1,15 @@
-
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: run-sequence
-  description: some description
   annotations:
     argocd/app-name: run-sequence
     github.com/project-slug: intelipost/run-sequence
     sonarqube.org/project-key: run-sequence
+  description: some description
+  name: run-sequence
 spec:
-  type: service
+  childof:
+  - group:tms-engineering-managers
   lifecycle: production
-  owner: devteam
-  childof: 
-    - group:tms-engineering-managers
+  owner: expedicao
+  type: service
